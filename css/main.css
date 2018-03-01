@@ -1,0 +1,330 @@
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}/*需要清除浮动的添加此类*/
+
+ul{
+    margin: 0;
+}
+
+header{
+    background: rgba(0,0,0,0.4);
+}
+
+nav{
+    background-color: #b9b9b0;
+    height: 50px;
+}
+#banner{
+    background: transparent;
+    height: 700px;
+}
+
+nav ul{
+    list-style: none;
+    margin: 0;
+    float: right;
+}
+
+nav ul li,nav .logo{
+    display: inline-block;
+    line-height: 50px;
+    margin-right: 20px;
+}
+
+nav ul li a{
+    line-height: inherit;
+    text-decoration:none;
+    display: inline-block;
+    height: inherit;/*继承母元素的高度*/
+    color: #fff;
+    font-weight: 700;
+}
+
+nav .logo{
+    float: left;
+    padding-left: 20px;
+
+}
+
+/*.active{*/
+    /*border-bottom:4px solid #fff;*/
+
+/*}*/
+
+
+
+#banner .inner{
+    max-width: 300px;
+    text-align: center;
+    margin:0 auto;
+    position: relative;
+    top: 160px;
+
+}
+
+h1{
+    margin: 0;
+    padding: 20px;
+    border-top: 2px solid white;
+    border-bottom:2px solid white;
+    color: white;
+
+}
+
+
+
+button{
+    background-color: #338FCC;
+    border:none;
+    /*background: #333;*/
+    color: #eee;
+    font-size: 20px;
+}
+
+#banner button{
+    padding:15px 60px;
+}
+
+#banner .inner p{
+    color: #fff;
+}
+#banner .inner .more{
+    margin-top: 200px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.sub-heading{
+    line-height:30px;
+    margin: 30px;
+}
+
+.logo{
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+
+}
+.logo a{
+    color: #fff;
+    text-decoration: none;
+}
+
+h2{
+    font-size: 30px;
+}
+
+h3{
+    font-size: 26px;
+}
+
+.hr{
+    width: 100%;
+    height: 2px;
+    margin: 20px auto;
+
+}
+
+#main-btn{
+    padding:14px 28px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    border-radius: 6px;
+    background: #1188aa;
+}
+.green-section{
+    text-align: center;
+    background-color: #089080;
+    color: #fff;
+    padding:100px 0;
+
+}
+
+.green-section .hr{
+    background: #098E9F;
+    width: 60%;
+
+
+}
+
+.green-section .icon-group .icon{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 1px solid #0D6F7C;
+    transform: rotate(45deg);
+    margin: 25px;
+}
+
+.icon-group{
+    margin-top: 60px;
+}
+
+.wrapper{
+    max-width: 1080px;
+    margin:0 auto;
+}
+
+/*二-灰色章节*/
+
+.gray-section{
+    background: #252f34;
+    color: #fff;
+
+}
+
+.gray-section .img-section{
+    width: 45%;
+}
+
+.img-section img{
+    width: 100%;
+}
+
+.gray-section .text-section{
+    width: 55%;
+}
+
+.article-preview:nth-child(odd){
+    background-color: rgba(255,255,255,0.1);
+}
+
+.article-preview:after{
+    content: '';
+    display: block;
+    clear: both;
+}/*这一步的原理多想想*/
+
+.article-preview > div{
+    float: left;
+}
+
+.text-section{
+    position:relative;
+    top: 68px;
+    left: 50px;
+}
+
+.text-section h2{
+    margin-bottom: 20px;
+
+}
+
+.text-section .sub-heading{
+    font-size: 22px;
+    margin: 0;
+
+}
+
+.text-section p{
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.text-section > *{
+    max-width: 90%;
+}/*防止文字溢出*/
+
+.article-preview{
+    font-size:0;
+}/*复制article-preview后上下有缝隙，需要重置font-size为0*/
+
+
+/*三-紫色章节*/
+.purple-section{
+    padding: 80px;
+    background: #3F3965;
+    color: #fff;
+}
+
+.purple-section .heading-wrapper{
+    text-align: center;
+}
+
+.purple-section .hr{
+    background: #373259;
+    width:60%;
+}
+
+.card-group{
+    padding: 0 12% 0 12%;
+}
+
+.card{
+    float: left;
+    width: 50%;
+    min-height: 300px;
+    padding: 50px;
+    box-sizing:border-box;
+    border: 1px solid white;
+
+}
+
+p{
+    font-size:18px;
+    letter-spacing:1px;
+}
+
+.card:first-child{
+    background: rgba(0,0,0,0.08);
+}
+
+.card:nth-child(2){
+    background: rgba(0,0,0,0.16);
+}
+.card:nth-child(3){
+    background: rgba(0,0,0,0.24);
+}
+.card:nth-child(4){
+    background: rgba(0,0,0,0.32);
+}
+.card:nth-child(5){
+    background: rgba(0,0,0,0.40);
+}
+.card:nth-child(6){
+    background: rgba(0,0,0,0.48);
+}
+
+footer{
+    background: #333333;
+    color: #fff;
+    min-height: 200px;
+    text-align: center;
+
+}
+
+ul.share-group{
+    display: block;
+    width:1080px;
+    margin:0 auto;
+    padding: 50px;
+
+}
+
+.share-group li{
+    display: inline-block;
+    padding: 10px;
+}
+
+.copy{
+    padding-bottom: 20px;
+    font-size: 22px;
+}
+
+.main-wrapper{
+    background: #444 url("../img/banner.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center center;
+}
+
+
+
+
+
+
+
