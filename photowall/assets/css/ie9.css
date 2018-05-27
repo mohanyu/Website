@@ -1,0 +1,41 @@
+/*
+	多重宇宙 by PixWeb
+	pixweb.cn 
+	Free for personal and commercial use under the CCA 3.0 license (pixweb.cn/#/help)
+*/
+
+/* Panel */
+
+	.panel > .inner.split:after {
+		clear: both;
+		content: '';
+		display: block;
+	}
+
+	.panel > .inner.split > div {
+		float: left;
+		margin-left: 0;
+		padding-left: 0;
+	}
+
+	.panel > .inner.split > :first-child {
+		padding-left: 0;
+	}
+
+/* Wrapper */
+
+	#wrapper:before {
+		display: none;
+	}
+
+/* Main */
+
+	#main:after {
+		clear: both;
+		content: '';
+		display: block;
+	}
+
+	#main .thumb {
+		float: left;
+	}
