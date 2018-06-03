@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>文章标题</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../resume/css/logo/iconfont.css">
+    <link rel="stylesheet" href="css/article.css">
+
+
+</head>
+<body>
+<div class="main-wrapper article">
+    <header><!--页头开始-->
+        <nav>
+            <div class="logo">
+
+                <a href="../index.html"><img src="../img/mo.png" alt=""></a>
+                <a href="../index.html">墨瀚宇</a>
+            </div>
+            <ul>
+                <li><a href="../index.html" class="active">首页</a></li>
+                <li><a href="../article/index.html" target="_blank">技术文章</a></li>
+                <li><a href="../photowall/index.html" target="_blank">图片墙</a></li>
+                <!--<li><a id="myProject" href="#" target="_blank">一些项目</a></li>-->
+                <li><a href="../resume/index.html" target="_blank">我的简历</a></li>
+                <li id="sidebar_trigger">
+                    <p class="menu-toggle">
+                        <span class="one"></span>
+                        <span class="two"></span>
+                        <span class="three"></span>
+                    </p>
+                </li>
+            </ul>
+        </nav>
+        <div id="banner">
+            <div class="inner">
+                <h1>墨瀚宇</h1>
+                <p class="sub-heading">JS常用算法（冒泡、快排、选择排序）</p>
+            </div>
+        </div>
+    </header><!--页头结束-->
+
+    <div class="content"><!--内容开始-->
+        <div class="content_wrapper">
+            <aside>
+                <ul>
+                    <li><a href="#">JS对象的安全性之扩展，密封，冻结</a></li>
+                    <li><a href="article2.html">原型和原型链</a></li>
+                    <li><a href="article1.html">JS对象属性的操作(读写、删除、检测、枚举）</a></li>
+                    <li><a href="article3.html">JS常用算法（冒泡、快排、选择排序）</a></li>
+
+                    <li><a href="https://www.zhihu.com/people/mo-han-yu-10/"
+                           target="_blank">&nbsp;&nbsp;<span class="iconfont">&#xe6ba;</span>更多文章点击查看我的知乎</a>
+                    </li>
+                    <li><a href="https://share.weiyun.com/54JMGPx" target="_blank">&nbsp;&nbsp;<span class="iconfont">&#xe658;</span>或点击下载我的.docx笔记</a></li>
+                </ul>
+            </aside>
+            <article>
+                <section>
+                    <div class="article_info">编辑于2018年6月|浏览:642</div>
+                    <h6>说明：</h6>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时间复杂度指的是一个算法执行所耗费的时间</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;空间复杂度指运行完一个程序所需内存的大小</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;稳定指，如果a=b,a在b的前面，排序后a仍然在b的前面</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不稳定指，如果a=b，a在b的前面，排序后可能会交换位置</p>
+
+                    <p><code> var array = [23, 38, 22, 45, 23, 67, 31, 15, 41]</code></p>
+
+                    <div>
+                        <h4>冒泡：</h4>
+                        <h6>工作原理：</h6>
+                        <p>每次两个相邻的数进行比较，有较大的就放到后面，一轮下来，最后一位是最大的数，然后第二轮排序到倒数第二个截止，找出第二大的数，以此类推。</p>
+                        <p> <code>算法是稳定算法</code>，时间复杂度为O(n^2),空间复杂度为1</p>
+                        <div><img src="./img/17.jpg" alt=""></div>
+
+
+
+                        <h4>快排</h4>
+                        <h6>工作原理：</h6>
+                        <p>从数组中选定一个基数，然后把数组中的每一项与此基数做比较，小的放入一个新数组，大的放入另外一个新数组。然后再采用这样的方法操作新数组。直到所有子集只剩下一个元素，排序完成。</p>
+                        <p> <code>属于不稳定排序！</code></p>
+                        <div><img src="./img/18.jpg" alt=""></div>
+
+                        <h4> 选择排序</h4>
+                        <h6>工作原理：</h6>
+                        <p>是一种简单直观的排序算法。其基本思想是：首先在未排序的数列中找到最小(or最大)元素，然后将其存放到数列的起始位置；接着，再从剩余未排序的元素中继续寻找最小(or最大)元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
+                        <p>
+                            是不稳定算法，比如序列5 8 5 2 9，
+                            我们知道第一遍选择第1个元素5会和2交换，那么原序列中2个5的相对前后顺序就被破坏了，所以选择排序 <code>不是一个稳定的排序算法</code>
+                        </p>
+                        <p> <code>时间复杂度较差</code>，为O(n^2).空间复杂度为1</p>
+                        <div><img src="./img/19.jpg" alt=""></div>
+
+                    </div>
+                </section>
+
+            </article>
+        </div>
+    </div>
+</div>
+<footer><!--页尾开始-->
+    <ul class="share-group">
+        <li><span class="iconfont"></span></li>
+        <li><a href="https://github.com/mohanyu" target="_blank"><span class="iconfont">&#xe607;</span></a></li>
+        <li><a href="https://www.zhihu.com/people/mo-han-yu-10/" target="_blank"><span class="iconfont">&#xe6ba;</span></a>
+        </li>
+        <li><a href="https://www.facebook.com/profile.php?id=100009430237092" target="_blank"><span class="iconfont">&#xe6f8;</span></a>
+        </li>
+        <li><a href='mailto:\mohanyu6@gmail.com' target="_blank"><span class="iconfont">&#xe606;</span></a></li>
+        <li><a href="https://www.instagram.com/hanyumo/" target="_blank"><span class="iconfont">&#xe62c;</span></a></li>
+        <li><a href="https://www.quora.com/profile/Hanyu-Mo-1" target="_blank"><span
+                class="iconfont">&#xe69b;</span></a></li>
+        <li><a href="https://twitter.com/mohanyu8?lang=zh-cn" target="_blank"><span class="iconfont">&#xe60c;</span></a>
+        </li>
+        <li><a href="../resume/images/wechat.png" target="_blank"><span class="iconfont">&#xe6b2;</span></a></li>
+        <li><a href="https://weibo.com/mohanyu6" target="_blank"><span class="iconfont">&#xe6a4;</span></a></li>
+        <li><a href="../img/qq_副本.jpg" target="_blank"><span class="iconfont">&#xe6a1;</span></a></li>
+    </ul>
+    <p class="share-group-p"><span class="iconfont">&#xe732;</span>求职中：可随时入职、前端开发岗、杭州、7500左右、特别喜欢的可例外</p>
+    <p class="share-group-p">另：本名姬晓辉，墨瀚宇为我网名</p>
+    <div class="copy">
+        &copy . Design by JiXiaoHui - 2018 · 前端工程师
+    </div>
+</footer><!--页尾结束-->
+
+<!--侧边栏-->
+<div class="mask">
+    <div id="sidebar">
+        <div class="menu-nav"><p class="menu-avatar"><img
+                src="../img/head.jpg" alt="头像"></p>
+            <ul class="menu-list">
+                <li><a href="https://mohanyu.github.io/My-Flat-Design-CSS3-Website/">首页</a></li>
+                <li><a href="https://share.weiyun.com/54JMGPx" target="_blank">前端笔记</a></li>
+                <li><a href="https://mohanyu.github.io/My-Flat-Design-CSS3-Website/">网页作品</a></li>
+                <li><a href="https://weibo.com/mohanyu6" target="_blank">生活锁事</a></li>
+                <li><a href="https://api.weibo.com/2/statuses/share.json" target="_blank">转载分享</a></li>
+            </ul>
+            <p class="menu-code"><span>有疑问或想要源码的可加入我微信或用手机扫描二维码</span>
+                <img src="../resume/images/wechat.png" alt="加微信拉你进群"></p>
+        </div>
+    </div>
+</div>
+
+<button class="back-to-top"><a>返回顶部</a></button>
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/main.js"></script>
+
+</body>
+</html>

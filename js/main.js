@@ -4,32 +4,44 @@ $(function () {
     var sidebar = $('#sidebar'),//选择侧栏
         mask = $('.mask'),      //选择侧栏的上级菜单
         sidebar_trigger = $('#sidebar_trigger'),/*侧栏*/
-        backButton = $('.back-to-top');/*顶部*/
+        backButton = $('.back-to-top'),/*顶部*/
+        sub_heading_content = $('#sub-heading-content');
 
+    // var sub_heading_content = $("#sub_heading_content");
 
-/*    function show_sidebar() {
-        // console.log("clicked");
-        mask.fadeIn();
-        // sidebar.animate({"right":0});
-        sidebar.css("right",0);
+    function content() {
+        console.log(22);
     }
-    function hide_sidebar() {
 
-        mask.fadeOut();
-        sidebar.css("right",-sidebar.width());
+    sub_heading_content.click(function () {
+        console.log(2)
+        setInterval(function () {
+            if(sub_heading_content.html(text1)){
+                sub_heading_content.html(text2)
+            }else{
+                sub_heading_content.html(text1)
+
+            }
+
+        },1000)
+
+    });
+
+    var text1 =  '&nbsp;&nbsp;人是生而自由的&nbsp;，而无往&nbsp;&nbsp;<p>往不处于枷锁之中</p>';
+    var text2 =  '<p>你脚踩的地狱只是天堂的倒影</p><p>我唇角的故事也仅是时间的灰烬</p>';
+
+    function toggletext() {
+        sub_heading_content.html(text1)
+        setInterval(function () {
+            if(!sub_heading_content.html(text1)){
+                sub_heading_content.html(text2)
+            }else{
+                sub_heading_content.html(text1)
+            }
+        },1000)
     }
-    //点击侧栏按钮时，展示侧栏
-    sidebar_trigger.on('click',show_sidebar);  //原先的
-
-    mask.on('click',hide_sidebar);*/
-
-
-    //这部分是自己写的，上面的没动
     // 分析
-    //    检查侧栏是否处于打开状态，如果是false则打开如果是true则关闭，的同时把toggle设置为false
-
-
-
+    // 检查侧栏是否处于打开状态，如果是false则打开如果是true则关闭，的同时把toggle设置为false
     var toggle = false;//代表侧栏是否处于打开状态
 
     function show_sidebar() {
@@ -56,6 +68,11 @@ $(function () {
         }
 
     }
+
+    function aside_animation () {
+        sidebar_trigger.classList.remove('sidebar').add('sidebar-x')
+    }
+
 
     //点击侧栏按钮时，展示侧栏
     sidebar_trigger.on('click',qiehuan);  //原先的
@@ -91,10 +108,8 @@ $(function () {
     $(window).trigger('scroll');  ///*让程序自己trigger（触发），scroll这个参数，达到fadeout的目的，这一点很重要*/
 
 /*    需求：
-        给第一页的  ’ 更多’  添加动画，使得用户点击它之后更平滑的过渡到指定的页面位置*/
+      给第一页的  ’ 更多’  添加动画，使得用户点击它之后更平滑的过渡到指定的页面位置*/
     var moreA = $('.more a');
-
-
 
     moreA.on('click',function () {
         // alert(1)
@@ -105,8 +120,19 @@ $(function () {
         },500)
 
     })
+    /*    需求：
+          给第一页的  ’ 我的项目’  添加动画，使得用户点击它之后更平滑的过渡到指定的页面位置*/
+    var myProject = $('#myProject');
 
+    myProject.on('click',function () {
+        // alert(1)
+        setTimeout(function () {
+            $('html,body').animate({
+                scrollTop: 1000
+            },800)
+        },500)
 
+    })
 
 
 

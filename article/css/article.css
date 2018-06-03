@@ -1,0 +1,81 @@
+.inner{
+    padding-top: 30px;
+}
+.content_wrapper{
+    width: 100%;
+    margin: 0 auto;
+}
+.article .content{
+    background: darkcyan;
+    overflow: hidden;
+
+}
+
+.content_wrapper aside{
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+.content_wrapper aside ul{
+    width: 100%;
+    padding: 0 5px 0 15px;
+
+}
+.content_wrapper article{
+    float: left;
+    width: 80%;
+    background-color: cyan;
+}
+
+article section{
+    width: 93%;
+    float: right;
+    padding: 0 30px 0 40px;
+}
+
+aside ul li{
+    line-height:30px;
+    margin-top:5px;
+    background-color: lightcyan;
+    border-radius: 4px;
+    border-bottom: solid;
+    width: 400px;
+    height: 30px;
+
+}
+aside ul li .iconfont{
+    font-size: 24px !important;
+    color: #0100ff !important;
+    text-align: center;
+}
+aside ul li a{
+    color: #000;
+}
+section h5{
+    font-size: 22px;
+}
+section h6{
+    font-size: 16px;
+}
+section strong {
+    font-size: 20px;
+}
+section p{
+    font-size: 15px;
+}
+/*section span{*/
+    /*font-weight: bold;*/
+    /*color: #c75ba7;*/
+/*}*/
+
+code{
+    font-size: 13px;
+    font-family: Consolas,monospace,serif;
+    color: #D05;
+    white-space: nowrap;
+    padding: 0 4px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fafafa;
+}
+

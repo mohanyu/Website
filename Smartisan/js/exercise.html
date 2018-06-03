@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>高仿锤子官网首页图片交互效果</title>
+    <style>
+        html,body{
+            padding: 0;
+            margin: 0;
+            background: #f3f3f3;
+        }
+        #box{
+            width: 100%;
+            height: 400px;
+            perspective: 1000px;
+            padding: 100px 0;}
+        #picBox{
+            width: 800px;
+            height: 400px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+        #img{
+            transition: all .3s linear;
+            transform: rotate(0deg);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="picBox">
+        <div id="img">
+            <!--放入图片地址-->
+            <img src="../weibo/img/banner.jpg" alt="">
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    /*原理：
+    使用CSS3的transform-style: preserve-3d构建一个3D透视空间。
+获取鼠标X，Y轴线性运动变量。
+为了使鼠标左右移动图片产生左右偏转，得把鼠标运动到banner图中间点为“0,0”，这样的话往左为负，往右为正。
+把变量赋值给CSS3的rotateX,rotateY。
+
+一开始我们给图片外层的div添加两个事件监听，当移动和移出的时候触发rotate和outBox函数，e.pageX是鼠标的X轴，this.offsetWidth/2是本身宽度的一半，this.offsetLeft距离它上一层（父级）距离左边框的距离，e.pageY是鼠标的Y轴，this.offsetHeight/2是本身高度的一半，this.offsetTop距离它上一层（父级）距离上边框的距离，现在在看那两行代码是不是就很清楚了！！！
+*/
+    var picBox = document.getElementById('picBox');
+
+//    picBox分别监听鼠标进入和鼠标离开事件，鼠标进入则执行rotate事件，鼠标离开则执行outBox事件
+
+    picBox.addEventListener('mousemove', rotate, false);
+    picBox.addEventListener('mouseout', outBox, false);
+
+    //监听鼠标放置到图片上执行下列函数
+    var timer = null;
+    function rotate(e){
+        var baseX = e.pageX - this.offsetWidth/2 - this.offsetLeft,
+            baseY = e.pageY - this.offsetHeight/2 - this.offsetTop;
+        console.log(this.offsetLeft)
+        //事件节流
+        clearTimeout(this.timer)
+         timer = setTimeout(function () {
+            img.style.transform = 'rotateX(' + baseY/(-80) + 'deg) rotateY(' + baseX/300 + 'deg)';
+        },16)
+
+    }
+
+    //结束图像变换，恢复初始值
+    function outBox(){
+        img.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    }
+
+
+
+
+</script>
+</body>
+</html>

@@ -252,6 +252,20 @@ dd {
     color: #fff;
     border-radius: 5px;
     background: #333; }
+.timeline-wrapper .timeline-title span:hover{
+    transition: all 0.5s;
+    color: #ff1064;
+}
+.timeline-wrapper .timeline-title a:hover{
+    transition: all 0.5s;
+    color: #ff1064;
+}
+/*a, .iconfont:hover{*/
+    /*transition: all 0.5s;*/
+    /*color: red;*/
+/*}*/
+
+
 .timeline-wrapper::after {
     float: left;
     width: 0;
@@ -354,15 +368,7 @@ dd {
     .experience .experience-link {
         font-size: 14px; }
 }
-/*.experience .experience-link {*/
-    /*display: inline-block;*/
-    /*float: right;*/
-    /*margin-right: 10px;*/
-    /*padding: 0 3px;*/
-    /*text-decoration: none;*/
-    /*border-radius: 5px;*/
-    /*background: teal;*/
-/*}*/
+
 
 @media print {
     .skills .skill-content {
@@ -374,6 +380,9 @@ dd {
     margin: 6px 0 5px 26px;
     color: #2d4e5c;
 }
+
+
+
 
 .skills .skill-description {
     font-size: 15px;

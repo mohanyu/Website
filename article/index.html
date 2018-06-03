@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>文章标题</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../resume/css/logo/iconfont.css">
+    <link rel="stylesheet" href="css/article.css">
+
+
+</head>
+<body>
+    <div class="main-wrapper article">
+        <header><!--页头开始-->
+            <nav>
+                <div class="logo">
+
+                    <a href="../index.html"><img src="../img/mo.png" alt=""></a>
+                    <a href="../index.html">墨瀚宇</a>
+                </div>
+                <ul>
+                    <li><a href="../index.html" class="active">首页</a></li>
+                    <li><a href="../article/index.html" target="_blank">技术文章</a></li>
+                    <li><a href="../photowall/index.html" target="_blank">图片墙</a></li>
+                    <!--<li><a id="myProject" href="#" target="_blank">一些项目</a></li>-->
+                    <li><a href="../resume/index.html" target="_blank">我的简历</a></li>
+                    <li id="sidebar_trigger">
+                        <p class="menu-toggle">
+                            <span class="one"></span>
+                            <span class="two"></span>
+                            <span class="three"></span>
+                        </p>
+                    </li>
+                </ul>
+            </nav>
+            <div id="banner">
+                <div class="inner">
+                    <h1>墨瀚宇</h1>
+                    <p class="sub-heading">JS对象的安全性之扩展，密封，冻结</p>
+                    </div>
+            </div>
+        </header><!--页头结束-->
+
+        <div class="content"><!--内容开始-->
+            <div class="content_wrapper">
+                <aside>
+                    <ul>
+                        <li><a href="#">JS对象的安全性之扩展，密封，冻结</a></li>
+                        <li><a href="article2.html">原型和原型链</a></li>
+                        <li><a href="article1.html">JS对象属性的操作(读写、删除、检测、枚举）</a></li>
+                        <li><a href="article3.html">JS常用算法（冒泡、快排、选择排序）</a></li>
+
+                        <li><a href="https://www.zhihu.com/people/mo-han-yu-10/"
+                               target="_blank">&nbsp;&nbsp;<span class="iconfont">&#xe6ba;</span>更多文章点击查看我的知乎</a>
+                        </li>
+                        <li><a href="https://share.weiyun.com/54JMGPx" target="_blank">&nbsp;&nbsp;<span class="iconfont">&#xe658;</span>或点击下载我的.docx笔记</a></li>
+                    </ul>
+                </aside>
+                    <article>
+                        <section>
+                            <div class="article_info">编辑于2018年4月|浏览:469</div>
+
+                            <div>
+                                <h4>对象的标签</h4>
+                                <p>主要有三种：</p>
+
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;[[proto]] —— 原型标签</p>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;[[class]] —— 类标签</p>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;[[extensible]] —— 可扩展性标签</p>
+
+                            </div>
+                            <h5>①原型标签[[proto]]</h5>
+                            <div><img src="./img/1.png" alt=""></div>
+                            <div>
+                                <h5>②Class（类）标签</h5>
+                                ：表示这个对象是哪个类型
+                                <p>但是class标签没有一个直接的方式去查看它或者修改它！我们可以间接的通过 <code>prototype.toString</code>  的方式去获取class！</p>
+                            </div>
+                            <div>一、首先将 <code>Object.prototype.toString</code>赋值为 <code>toString</code>，以便简化下边代码
+                            </div>
+                            <div><img src="./img/2.jpg" alt=""></div>
+
+
+
+                            <div>
+                                <h5>③extensible标签</h5>
+                                ：表示对象上的属性是否可以扩展，是否可以被继续添加
+                                <p><strong>API:</strong></p>
+                                <p><code>Object.isExtensible(obj); </code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;判断对象属性是否可以被扩展:</p>
+                                <p><code>Object.preventExtensions(obj); </code>&nbsp;&nbsp;禁止对象属性的扩展</p>
+                                <p><code>Object.seal(obj); </code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;阻止一个对象扩展的同时，阻止它的对象原存的属性标签被修改、删除：</p>
+                                <p><code>Object.freeze(obj); </code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;冻结这个对象（不可增删改查）：</p>
+                                <p><code>Object.isFrozen(obj); </code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;判断是否被冻结：</p>
+                            </div>
+
+                            <div><strong>↑上述方法只针对当前对象，不会影响原型链上的对象</strong>
+                                <p>如果想对原型链所有对象做类似处理可以通过 <code>Object.prototypeof</code>一些方法遍历他的原型链去 <code>frozen</code>，冻结所有
+                                </p>
+                            </div>
+                            <div><img src="./img/3.jpg" alt=""></div>
+
+
+                        </section>
+
+                    </article>
+                </div>
+            </div>
+        </div>
+    <footer><!--页尾开始-->
+        <ul class="share-group">
+            <li><span class="iconfont"></span></li>
+            <li><a href="https://github.com/mohanyu" target="_blank"><span class="iconfont">&#xe607;</span></a></li>
+            <li><a href="https://www.zhihu.com/people/mo-han-yu-10/" target="_blank"><span class="iconfont">&#xe6ba;</span></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100009430237092" target="_blank"><span class="iconfont">&#xe6f8;</span></a></li>
+            <li><a href='mailto:\mohanyu6@gmail.com' target="_blank"><span class="iconfont">&#xe606;</span></a></li>
+            <li><a href="https://www.instagram.com/hanyumo/" target="_blank"><span class="iconfont">&#xe62c;</span></a></li>
+            <li><a href="https://www.quora.com/profile/Hanyu-Mo-1" target="_blank"><span class="iconfont">&#xe69b;</span></a></li>
+            <li><a href="https://twitter.com/mohanyu8?lang=zh-cn" target="_blank"><span class="iconfont">&#xe60c;</span></a></li>
+            <li><a href="../resume/images/wechat.png" target="_blank"><span class="iconfont">&#xe6b2;</span></a></li>
+            <li><a href="https://weibo.com/mohanyu6" target="_blank"><span class="iconfont">&#xe6a4;</span></a></li>
+            <li><a href="../img/qq_副本.jpg" target="_blank"><span class="iconfont">&#xe6a1;</span></a></li>
+        </ul>
+        <p class="share-group-p"><span class="iconfont">&#xe732;</span>求职中：可随时入职、前端开发岗、杭州、7500左右、特别喜欢的可例外</p>
+        <p class="share-group-p">另：本名姬晓辉，墨瀚宇为我网名</p>
+        <div class="copy">
+            &copy . Design by JiXiaoHui - 2018  · 前端工程师
+        </div>
+    </footer><!--页尾结束-->
+
+    <!--侧边栏-->
+    <div class="mask">
+        <div id="sidebar">
+            <div class="menu-nav"><p class="menu-avatar"><img
+                    src="../img/head.jpg" alt="头像"></p>
+                <ul class="menu-list">
+                    <li><a href="https://mohanyu.github.io/My-Flat-Design-CSS3-Website/">首页</a></li>
+                    <li><a href="https://share.weiyun.com/54JMGPx" target="_blank">前端笔记</a></li>
+                    <li><a href="https://mohanyu.github.io/My-Flat-Design-CSS3-Website/">网页作品</a></li>
+                    <li><a href="https://weibo.com/mohanyu6" target="_blank">生活锁事</a></li>
+                    <li><a href="https://api.weibo.com/2/statuses/share.json" target="_blank">转载分享</a></li>
+                </ul>
+                <p class="menu-code"><span>有疑问或想要源码的可加入我微信或用手机扫描二维码</span>
+                    <img src="../resume/images/wechat.png" alt="加微信拉你进群"></p>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-to-top"><a>返回顶部</a></button>
+
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
+</html>

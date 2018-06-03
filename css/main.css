@@ -1,3 +1,6 @@
+body{
+    overflow-x:hidden;
+}
 .clearfix:after{
     content: '';
     display: block;
@@ -54,14 +57,9 @@ nav ul li a{
 }
 
 
-.menu-open {
-    width: 100%;
-    overflow: hidden
-}
-
 .menu-toggle {
     line-height: 50px;
-    width: 24px;
+    width: 22px;
 }
 /*右上角的三道横杠*/
 .menu-toggle .one{
@@ -69,20 +67,13 @@ nav ul li a{
     height: 3px;
     background: #fff;
     transition: all .3s;
-    margin-bottom: 4px;
-    /*-webkit-transform: rotate(45deg) translateY(11px);*/
-    /*-ms-transform: rotate(45deg) translateY(11px);*/
-    /*transform: rotate(45deg) translateY(11px)*/
 }
 .menu-toggle .two {
     display: block;
     height: 3px;
     background: #fff;
     transition: all .3s;
-    /*margin: 0 4px;*/
-    /*-webkit-transform: rotate(45deg) translateY(11px);*/
-    /*-ms-transform: rotate(45deg) translateY(11px);*/
-    /*transform: rotate(45deg) translateY(11px)*/
+    margin-top: 4px;
 }
 .menu-toggle .three {
     display: block;
@@ -90,10 +81,27 @@ nav ul li a{
     background: #fff;
     transition: all .3s;
     margin-top: 4px;
-    /*-webkit-transform: rotate(45deg) translateY(11px);*/
-    /*-ms-transform: rotate(45deg) translateY(11px);*/
-    /*transform: rotate(45deg) translateY(11px)*/
 }
+/*.menu-toggle hover时的内容*/
+.menu-toggle:hover .one{
+    transition: all .3s;
+    -webkit-transform: rotate(45deg) translateY(10px);
+    -ms-transform: rotate(45deg) translateY(10px);
+    transform: rotate(45deg) translateY(10px)
+}
+
+.menu-toggle:hover .two{
+    background: none;
+}
+
+.menu-toggle:hover .three{
+    transition: all .3s;
+    -webkit-transform: rotate(-45deg) translateY(-10px);
+    -ms-transform: rotate(-45deg) translateY(-10px);
+    transform: rotate(-45deg) translateY(-10px);
+}
+
+
 
 /*侧栏中的内容排布*/
 .menu-nav{
@@ -161,7 +169,7 @@ nav .logo img{
 
 
 #banner .inner{
-    max-width: 300px;
+    max-width: 350px;
     text-align: center;
     margin:0 auto;
     position: relative;
@@ -172,7 +180,6 @@ nav .logo img{
 
 .article #banner .inner{
     top:30px;
-
 }
 
 
@@ -210,7 +217,7 @@ button{
     font-weight: 600;
 }
 
-.sub-heading{
+.sub-heading, .sub-heading2{
     line-height:30px;
     display: block;
     margin: 30px;
@@ -257,36 +264,44 @@ h3{
     text-align: center;
     background-color: #089080;
     color: #fff;
-    padding:100px 0;
+    padding:60px 0;
 
 }
-
-.green-section .hr{
-    background: #28597a;
-    width: 60%;
-
-
-}
-
-.green-section .icon-group .icon{
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    border: 1px solid #0D6F7C;
-    transform: rotate(45deg);
-    margin: 25px;
-}
-
-.icon-group{
-    margin-top: 60px;
-}
-
 .wrapper{
     max-width: 1080px;
     margin:0 auto;
 }
 
-/*二-灰色章节*/
+.green-section .hr{
+    background: #28597a;
+    width: 60%;
+}
+.icon-group{
+    margin-top: 60px;
+    line-height: 30px;
+}
+
+
+
+.green-section .icon-group .icon {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #39c5d7;
+    /*transform: rotate(45deg);*/
+    margin: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: cadetblue;
+}
+.green-section .icon-group .icon:hover{
+    background-color: #ddad40;
+    transition: all 0.5s;
+
+}
+    /*二-灰色章节*/
 
 .gray-section{
     background: #252f34;
@@ -322,24 +337,25 @@ h3{
 
 .text-section{
     position:relative;
-    top: 68px;
+    top: 50px;
     left: 50px;
 }
 
 .text-section h2{
     margin-bottom: 20px;
-
 }
 
 .text-section .sub-heading{
-    font-size: 22px;
+    font-size: 18px;
+    color: cyan;
     margin: 0;
-
+    padding:15px 0 10px 0;
 }
 
 .text-section p{
-    font-size: 18px;
-    letter-spacing: 1px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 1.4;
 }
 
 .text-section > *{
@@ -351,11 +367,112 @@ h3{
 }/*复制article-preview后上下有缝隙，需要重置font-size为0*/
 
 
+
+/*放大缩小动画*/
+.skill{
+    height: 650px;
+    background: linear-gradient(to bottom, #6f7275 0%, #31353a 100%);
+    overflow: hidden;
+}
+
+.skill article{
+    width: 1000px;
+    margin:75px auto 0;
+}
+
+.img-scale{
+     float:left;
+     height: 200px;
+     width: 200px;
+     margin: 25px;
+     opacity: 1;
+     /*background: url("../img/跳一跳.jpg");*/
+     background-size:200px 200px;
+    font-size:10px;
+ }
+.img-scale p{
+    font-size:10px;
+}
+
+/*放大缩小 第一列*/
+
+.img-scale:nth-child(1){
+    background: url("../img/vue.jpg");
+    background-size:200px 200px;
+    color: #0100ff;
+}
+.img-scale:nth-child(2){
+    background: url("../img/website.jpg");
+    background-size:200px 200px;
+    color: #0100ff;
+}
+.img-scale:nth-child(3){
+    background: url("../img/简历.jpg");
+    background-size:200px 200px;
+    color: #0100ff;
+}
+.img-scale:nth-child(4){
+    background: url("../img/跳一跳.jpg");
+    background-size:200px 200px;
+    color: #0100ff;
+}
+/*放大缩小 第二列*/
+
+article:nth-child(2) .img-scale:nth-child(1){
+    background: url("../img/全屏滚动插件.jpg");
+    background-size:200px 200px;
+}
+article:nth-child(2) .img-scale:nth-child(2){
+    background: url("../img/nubiya.jpg");
+    background-size:200px 200px;
+}
+article:nth-child(2) .img-scale:nth-child(3){
+    background: url("../img/smartisan.jpg");
+    background-size:200px 200px;
+}
+article:nth-child(2) .img-scale:nth-child(4){
+    background: url("../img/ps.jpg");
+    background-size:200px 200px;
+}
+
+
+
+
+
+.img-scale .video_info{
+    height: 100%;
+    color: white;
+    text-align: center;
+    background-color:RGbA(0,0,0,0.65);
+    background-size:300px;
+    opacity: 0 ;
+    overflow: hidden;
+}
+
+.skill .img-scale:hover{
+    transition: all 1s;
+    transform: scale(1.46);
+}
+
+.skill .img-scale:hover .video_info{
+    transition: all 1s;
+    opacity: 1;
+}
+
+.skill .img-scale:hover .video_info h4{
+    transition: all 1s;
+    margin-top: 40px;
+}
+
+.video_info span{
+    padding: 10px 13px;
+}
+
 /*三-紫色章节*/
 .purple-section{
     padding: 80px;
     background: #3F3965;
-    color: #fff;
+    color: #fffcef;
 }
 
 .purple-section .heading-wrapper{
@@ -368,17 +485,58 @@ h3{
 }
 
 .card-group{
-    padding: 0 12% 0 12%;
+    padding: 0 6% 0 6%;
 }
 
 .card{
     float: left;
     width: 50%;
-    min-height: 300px;
-    padding: 50px;
+    height: 450px;
+    padding: 20px 20px;
     box-sizing:border-box;
     border: 1px solid white;
+    color: whitesmoke;
+}
+.card:nth-child(5){
+    height: 480px;
+}
+.card:nth-child(6){
+    height: 480px;
+}
 
+
+
+
+
+.card h3{
+    padding-bottom: 10px;
+    color: #7efcfc;
+}
+.card h3 span{
+    font-size: 22px;
+    color: #8bd9ff;
+}
+
+.card div{
+    position: relative;
+    width: 400px;
+    height: 293px;
+
+}
+
+
+
+.card img{
+    position: absolute;
+    /*width: 300px;*/
+    /*height: 400px;*/
+    top: 50%;
+    left: 50%;
+
+    margin-top: -145px;
+    margin-left: -160px;
+
+    padding-top: 5px;;
 }
 
 p{
@@ -417,7 +575,7 @@ ul.share-group{
     display: block;
     width:1080px;
     margin:0 auto;
-    padding: 50px;
+    padding: 30px;
     height:100%;
 
 }
@@ -504,15 +662,9 @@ ul.share-group{
     font-size: 0;
 }
 
-.content_wrapper{
-    width: 1080px;
-    margin: 0 auto;
-}
 
-.article .content{
-    background: #fcfcfc;
 
-}
+
 
 article{
     line-height:2;
@@ -522,15 +674,37 @@ article{
 .article_info{
     font-size: 14px;
     color: #999;
+    line-height: 3;
+}
+
+.iconfont {
+    font-size: 29px !important;
+}
+.iconfont:hover{
+    transition: all 1s;
+    animation: sport 2s .5s ease-in-out infinite;
+    color: red;
+}
+.share-group li:hover{
+    animation: sport 2s .5s ease-in-out infinite;
+}
+
+@keyframes sport {
+    20%{  transform: scale(.8);}
+    40%{  transform: scale(1.2);}
+    60%{  transform: scale(.9);}
+    80%{  transform: scale(1);}
+    100%{  transform: scale(1);}
+}
+
+.share-group-p{
+    padding-bottom: 30px;
+    font-size: 14px !important;
 
 }
 
+.share-group-p .iconfont{
+    font-size: 18px !important;
 
-
-
-
-
-
-
-
+}
 

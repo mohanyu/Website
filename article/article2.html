@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>文章标题</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../resume/css/logo/iconfont.css">
+    <link rel="stylesheet" href="css/article.css">
+
+
+</head>
+<body>
+<div class="main-wrapper article">
+    <header><!--页头开始-->
+        <nav>
+            <div class="logo">
+
+                <a href="../index.html"><img src="../img/mo.png" alt=""></a>
+                <a href="../index.html">墨瀚宇</a>
+            </div>
+            <ul>
+                <li><a href="../index.html" class="active">首页</a></li>
+                <li><a href="../article/index.html" target="_blank">技术文章</a></li>
+                <li><a href="../photowall/index.html" target="_blank">图片墙</a></li>
+                <!--<li><a id="myProject" href="#" target="_blank">一些项目</a></li>-->
+                <li><a href="../resume/index.html" target="_blank">我的简历</a></li>
+                <li id="sidebar_trigger">
+                    <p class="menu-toggle">
+                        <span class="one"></span>
+                        <span class="two"></span>
+                        <span class="three"></span>
+                    </p>
+                </li>
+            </ul>
+        </nav>
+        <div id="banner">
+            <div class="inner">
+                <h1>墨瀚宇</h1>
+                <p class="sub-heading">原型和原型链</p>
+            </div>
+        </div>
+    </header><!--页头结束-->
+
+    <div class="content"><!--内容开始-->
+        <div class="content_wrapper">
+            <aside>
+                <ul>
+                    <li><a href="#">JS对象的安全性之扩展，密封，冻结</a></li>
+                    <li><a href="article2.html">原型和原型链</a></li>
+                    <li><a href="article1.html">JS对象属性的操作(读写、删除、检测、枚举）</a></li>
+                    <li><a href="article3.html">JS常用算法（冒泡、快排、选择排序）</a></li>
+
+                    <li><a href="https://www.zhihu.com/people/mo-han-yu-10/"
+                           target="_blank">&nbsp;&nbsp;<span class="iconfont">&#xe6ba;</span>更多文章点击查看我的知乎</a>
+                    </li>
+                    <li><a href="https://share.weiyun.com/54JMGPx" target="_blank">&nbsp;&nbsp;<span class="iconfont">&#xe658;</span>或点击下载我的.docx笔记</a></li>
+                </ul>
+            </aside>
+            <article>
+                <section>
+                    <div class="article_info">编辑于2018年3月|浏览:342</div>
+
+                    <div>
+                        <h4>5条原型规则：</h4>
+                        <p>原型规则是学习原型链的基础</p>
+                        <h6>①所有的引用类型（数组、对象、函数），都具有对象特性，即可自由扩展的属性（除“null”以外）
+                            （对象的动态特征）
+                        </h6>
+                        <div><img src="./img/9.jpg" alt=""></div>
+
+                        <h6>②所有的引用类型（数组、对象、函数），都有一个 <code>_proto_（隐式原型或构造器原型）</code>属性，属性值是一个普通的对象</h6>
+                        <p>结合第一条，可自由扩展属性是很符合规定的，只不过<code>_proto_</code>这个属性系统已经定义好了</p>
+                        <div><img src="./img/10.jpg" alt=""></div>
+                        <h6>③所有的 <strong>函数</strong>，都有一个 <code>prototype</code>属性（显式原型），属性值也是一个普通对象{包含很多内容}</h6>
+                        <p><code>console.log(fn.prototype); //{constructor: ƒ}</code></p>
+                        <p>结合第一条，可自由扩展属性是很符合规定的，只不过 <code>prototype</code>这个属性系统已经定义好了</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;小节： <code>prototype和 __proto__</code>区别:</p>
+                        <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prototype是函数才有的属性；__proto__是每个对象才有的属性，同时函数也是对象</p>
+                        <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;多数情况下：__proto__ ===
+                            constructor.prototype(通过Object.create()创建的对象不适用此等式)</p>
+
+                        <h6> ④所有的引用类型（数组、对象、函数）， <code>>__proto__</code>属性值指向它的构造函数的 <code>”prototype”</code>属性值</h6>
+
+                        <div><img src="./img/11.jpg" alt=""></div>
+
+                        <p>obj对象的__proto__属性全等于 Object构造器的prototype属性</p>
+
+                        <h6>⑤当对象试图得到某个属性时，如果这个对象本身没有这个属性，那么会去它的__proto__(即它的构造函数的prototype)中寻找</h6>
+                        <div><img src="./img/12.jpg" alt=""></div>
+
+                    </div>
+                    <h4>原型链：</h4>
+                    <img src="./img/13.jpg" alt="">
+                    <p>f也是对象，它也能扩展属性，在f中寻找toString方法，看第⑤条是不是也要去它的隐式原型去找，即：</p>
+                    <img src="./img/14.jpg" alt="">
+                    <p><img src="./img/15.jpg" alt=""></p>
+                    <img src="./img/16.jpg" alt="">
+
+                    <div>
+
+
+                    </div>
+                </section>
+
+            </article>
+        </div>
+    </div>
+</div>
+<footer><!--页尾开始-->
+    <ul class="share-group">
+        <li><span class="iconfont"></span></li>
+        <li><a href="https://github.com/mohanyu" target="_blank"><span class="iconfont">&#xe607;</span></a></li>
+        <li><a href="https://www.zhihu.com/people/mo-han-yu-10/" target="_blank"><span class="iconfont">&#xe6ba;</span></a>
+        </li>
+        <li><a href="https://www.facebook.com/profile.php?id=100009430237092" target="_blank"><span class="iconfont">&#xe6f8;</span></a>
+        </li>
+        <li><a href='mailto:\mohanyu6@gmail.com' target="_blank"><span class="iconfont">&#xe606;</span></a></li>
+        <li><a href="https://www.instagram.com/hanyumo/" target="_blank"><span class="iconfont">&#xe62c;</span></a></li>
+        <li><a href="https://www.quora.com/profile/Hanyu-Mo-1" target="_blank"><span
+                class="iconfont">&#xe69b;</span></a></li>
+        <li><a href="https://twitter.com/mohanyu8?lang=zh-cn" target="_blank"><span class="iconfont">&#xe60c;</span></a>
+        </li>
+        <li><a href="../resume/images/wechat.png" target="_blank"><span class="iconfont">&#xe6b2;</span></a></li>
+        <li><a href="https://weibo.com/mohanyu6" target="_blank"><span class="iconfont">&#xe6a4;</span></a></li>
+        <li><a href="../img/qq_副本.jpg" target="_blank"><span class="iconfont">&#xe6a1;</span></a></li>
+    </ul>
+    <p class="share-group-p"><span class="iconfont">&#xe732;</span>求职中：可随时入职、前端开发岗、杭州、7500左右、特别喜欢的可例外</p>
+    <p class="share-group-p">另：本名姬晓辉，墨瀚宇为我网名</p>
+    <div class="copy">
+        &copy . Design by JiXiaoHui - 2018 · 前端工程师
+    </div>
+</footer><!--页尾结束-->
+
+<!--侧边栏-->
+<div class="mask">
+    <div id="sidebar">
+        <div class="menu-nav"><p class="menu-avatar"><img
+                src="../img/head.jpg" alt="头像"></p>
+            <ul class="menu-list">
+                <li><a href="https://mohanyu.github.io/My-Flat-Design-CSS3-Website/">首页</a></li>
+                <li><a href="https://share.weiyun.com/54JMGPx" target="_blank">前端笔记</a></li>
+                <li><a href="https://mohanyu.github.io/My-Flat-Design-CSS3-Website/">网页作品</a></li>
+                <li><a href="https://weibo.com/mohanyu6" target="_blank">生活锁事</a></li>
+                <li><a href="https://api.weibo.com/2/statuses/share.json" target="_blank">转载分享</a></li>
+            </ul>
+            <p class="menu-code"><span>有疑问或想要源码的可加入我微信或用手机扫描二维码</span>
+                <img src="../resume/images/wechat.png" alt="加微信拉你进群"></p>
+        </div>
+    </div>
+</div>
+
+
+<button class="back-to-top"><a>返回顶部</a></button>
+
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/main.js"></script>
+
+</body>
+</html>

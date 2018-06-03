@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>文章标题</title>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../resume/css/logo/iconfont.css">
+    <link rel="stylesheet" href="css/article.css">
+
+
+</head>
+<body>
+<div class="main-wrapper article">
+    <header><!--页头开始-->
+        <nav>
+            <div class="logo">
+
+                <a href="../index.html"><img src="../img/mo.png" alt=""></a>
+                <a href="../index.html">墨瀚宇</a>
+            </div>
+            <ul>
+                <li><a href="../index.html" class="active">首页</a></li>
+                <li><a href="../article/index.html" target="_blank">技术文章</a></li>
+                <li><a href="../photowall/index.html" target="_blank">图片墙</a></li>
+                <!--<li><a id="myProject" href="#" target="_blank">一些项目</a></li>-->
+                <li><a href="../resume/index.html" target="_blank">我的简历</a></li>
+                <li id="sidebar_trigger">
+                    <p class="menu-toggle">
+                        <span class="one"></span>
+                        <span class="two"></span>
+                        <span class="three"></span>
+                    </p>
+                </li>
+            </ul>
+        </nav>
+        <div id="banner">
+            <div class="inner">
+                <h1>墨瀚宇</h1>
+                <p class="sub-heading">JS对象属性的操作(读写、删除、检测、枚举）</p>
+            </div>
+        </div>
+    </header><!--页头结束-->
+
+    <div class="content"><!--内容开始-->
+        <div class="content_wrapper">
+            <aside>
+                <ul>
+                    <li><a href="#">JS对象的安全性之扩展，密封，冻结</a></li>
+                    <li><a href="article2.html">原型和原型链</a></li>
+                    <li><a href="article1.html">JS对象属性的操作(读写、删除、检测、枚举）</a></li>
+                    <li><a href="article3.html">JS常用算法（冒泡、快排、选择排序）</a></li>
+
+                    <li><a href="https://www.zhihu.com/people/mo-han-yu-10/"
+                           target="_blank">&nbsp;&nbsp;<span class="iconfont">&#xe6ba;</span>更多文章点击查看我的知乎</a>
+                    </li>
+                    <li><a href="https://share.weiyun.com/54JMGPx" target="_blank">&nbsp;&nbsp;<span class="iconfont">&#xe658;</span>或点击下载我的.docx笔记</a></li>
+                </ul>
+            </aside>
+            <article>
+                <section>
+                    <div class="article_info">编辑于2018年4月|浏览:542</div>
+
+                    <div>
+                        <h4>对象属性的操作</h4>
+                        <!--<p>主要有三种：</p>-->
+                        <p>对象属性的四个特性：可写性(writable)、可配置性（configurable）、可枚举性（enumerable）、值（value）</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;①读写对象属性</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;②删除属性</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;③枚举属性</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;④值属性</p>
+                        <p><code> writable:false </code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:对象属性是否可修改,flase为不可修改，默认值为true</p>
+                        <p><code>configurable:false </code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:能否使用delete、能否需改属性特性、或能否修改访问器属性、 false为不可重新定义，默认值为true，</p>
+                        <p><code> enumerable:false </code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :对象属性是否可通过for-in循环，flase为不可循环，默认值为true</p>
+                        <p><code>value:'xiaoming' </code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:对象属性的默认值，默认值为undefined</p>
+
+                    </div>
+                    <h5>①属性的读写</h5>
+                    <div><img src="./img/4.jpg" alt=""></div>
+                    <div>
+                        <h5>&nbsp;&nbsp;&nbsp;&nbsp;①-2属性读写——异常（尝试去读写不存在的属性）</h5>
+                        <div><img src="./img/5.jpg" alt=""></div>
+                        <p>所以，我们在进行赋值操作时需要做属性判断</p>
+                        <div><img src="./img/6.jpg" alt=""></div>
+                        <p>也可以巧用运算符的规则</p>
+                        <p><code>var yz = obj && obj.y && obj.y.z;</code></p>
+                        <p>如果obj是空的，直接返回undefined；</p>
+                        <p>如果obj存在，继续；</p>
+                        <p>看obj.y属性是否存在。。。</p>
+                    </div>
+                    <div>
+                        <h5>②属性的删除</h5>
+                        <p><strong>API:</strong></p>
+                        <p><code>delete obj.key </code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除obj数组中的key属性</p>
+                        <p><code> Object.defineProperty(obj,'key',{</code>      //检测obj对象的key属性是否可以被修改</p>
+                        <p><code> &nbsp;&nbsp;&nbsp;&nbsp;configurable:true </code>//不可修改，将抛出错误</p>
+                        <p><code>  });</code></p>
+                        <div><img src="./img/7.jpg" alt=""></div>
+                        <p>还有一些不能被删除的:</p>
+                        <ol>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.全局变量不能被删除</li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.局部变量也是如此</li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.函数声明也是同理:不论全局还是局部</li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.隐式的创建全局变量可以被删除的定义变量的方式（不推荐）</li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <h5>③属性的检测</h5>
+                        <p>对象的数据属性一般有如下几种</p>
+                        <p><strong>API:</strong></p>
+                        <p>1.<code>for（items in Object）{ }</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;检测obj对象的key属性是否可以被遍历</p>
+                        <p>2.<code>hasOwnPerperty();</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果给定的属性是继承属性，而不是自有属性将返回false</p>
+                        <p>3.<code> obj.propertyIsEnumerable('key');</code>&nbsp;&nbsp;&nbsp;&nbsp; 检测obj对象的key属性是否可以被遍历</p>
+
+                        <div><img src="./img/8.jpg" alt=""></div>
+                    </div>
+
+                </section>
+
+            </article>
+        </div>
+    </div>
+</div>
+<footer><!--页尾开始-->
+    <ul class="share-group">
+        <li><span class="iconfont"></span></li>
+        <li><a href="https://github.com/mohanyu" target="_blank"><span class="iconfont">&#xe607;</span></a></li>
+        <li><a href="https://www.zhihu.com/people/mo-han-yu-10/" target="_blank"><span class="iconfont">&#xe6ba;</span></a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100009430237092" target="_blank"><span class="iconfont">&#xe6f8;</span></a></li>
+        <li><a href='mailto:\mohanyu6@gmail.com' target="_blank"><span class="iconfont">&#xe606;</span></a></li>
+        <li><a href="https://www.instagram.com/hanyumo/" target="_blank"><span class="iconfont">&#xe62c;</span></a></li>
+        <li><a href="https://www.quora.com/profile/Hanyu-Mo-1" target="_blank"><span class="iconfont">&#xe69b;</span></a></li>
+        <li><a href="https://twitter.com/mohanyu8?lang=zh-cn" target="_blank"><span class="iconfont">&#xe60c;</span></a></li>
+        <li><a href="../resume/images/wechat.png" target="_blank"><span class="iconfont">&#xe6b2;</span></a></li>
+        <li><a href="https://weibo.com/mohanyu6" target="_blank"><span class="iconfont">&#xe6a4;</span></a></li>
+        <li><a href="../img/qq_副本.jpg" target="_blank"><span class="iconfont">&#xe6a1;</span></a></li>
+    </ul>
+    <p class="share-group-p"><span class="iconfont">&#xe732;</span>求职中：可随时入职、前端开发岗、杭州、7500左右、特别喜欢的可例外</p>
+    <p class="share-group-p">另：本名姬晓辉，墨瀚宇为我网名</p>
+    <div class="copy">
+        &copy . Design by JiXiaoHui - 2018  · 前端工程师
+    </div>
+</footer><!--页尾结束-->
+
+<!--侧边栏-->
+<div class="mask">
+    <div id="sidebar">
+        <div class="menu-nav"><p class="menu-avatar"><img
+                src="../img/head.jpg" alt="头像"></p>
+            <ul class="menu-list">
+                <li><a href="https://mohanyu.github.io/My-Flat-Design-CSS3-Website/">首页</a></li>
+                <li><a href="https://share.weiyun.com/54JMGPx" target="_blank">前端笔记</a></li>
+                <li><a href="https://mohanyu.github.io/My-Flat-Design-CSS3-Website/">网页作品</a></li>
+                <li><a href="https://weibo.com/mohanyu6" target="_blank">生活锁事</a></li>
+                <li><a href="https://api.weibo.com/2/statuses/share.json" target="_blank">转载分享</a></li>
+            </ul>
+            <p class="menu-code"><span>有疑问或想要源码的可加入我微信或用手机扫描二维码</span>
+                <img src="../resume/images/wechat.png" alt="加微信拉你进群"></p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<button class="back-to-top"><a>返回顶部</a></button>
+
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/main.js"></script>
+
+</body>
+</html>
