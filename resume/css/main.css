@@ -169,7 +169,10 @@ address {
     color: #fff; }
 .contacts a:hover {
     color: #a3d3d1; }
-
+.title h1:hover,.title h2:hover{
+    transition: 0.8s ease-out;
+    color: #a3d3d1;
+}
 section {
     margin-bottom: 6px; }
 @media print {
@@ -260,10 +263,10 @@ dd {
     transition: all 0.5s;
     color: #ff1064;
 }
-/*a, .iconfont:hover{*/
-    /*transition: all 0.5s;*/
-    /*color: red;*/
-/*}*/
+.iconfont:hover{
+    transition: all 0.5s;
+    color: #ff1064;
+}
 
 
 .timeline-wrapper::after {
