@@ -4,20 +4,20 @@
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50
 }
-@media only screen and (min-width: 640px) {
-    html {
-        /*font-size: 32px;*/
-        background: #8cbc8b
-    }
+/*@media only screen and (min-width: 640px) {*/
+    /*html {*/
+        /*!*font-size: 32px;*!*/
+        /*background: #8cbc8b*/
+    /*}*/
 
-    body {
-        margin: 0 auto
-    }
+    /*body {*/
+        /*margin: 0 auto*/
+    /*}*/
 
-    .btn-float, .footer ul, .top, body {
-        width: 640px
-    }
-}
+    /*.btn-float, .footer ul, .top, body {*/
+        /*width: 640px*/
+    /*}*/
+/*}*/
 
 .header[data-v-5dd958f4] {
     display: -ms-flexbox;

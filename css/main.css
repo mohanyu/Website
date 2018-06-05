@@ -510,11 +510,13 @@ article:nth-child(2) .img-scale:nth-child(4){
 
 .card h3{
     padding-bottom: 10px;
-    color: #7efcfc;
+    /*color: #7efcfc;*/
+    color: #63cba8;
+
 }
 .card h3 span{
     font-size: 22px;
-    color: #8bd9ff;
+    color: #fffcef;
 }
 
 .card div{
@@ -523,8 +525,6 @@ article:nth-child(2) .img-scale:nth-child(4){
     height: 293px;
 
 }
-
-
 
 .card img{
     position: absolute;
@@ -536,8 +536,17 @@ article:nth-child(2) .img-scale:nth-child(4){
     margin-top: -145px;
     margin-left: -160px;
 
-    padding-top: 5px;;
+    padding-top: 20px;;
+
 }
+
+.card p{
+    font-size:16px;
+    text-space: 2px;
+}
+
+
+
 
 p{
     font-size:18px;
