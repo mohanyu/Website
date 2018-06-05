@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn1">ajax-github</button>
+
+
+
+<script>
+    document.getElementById("btn1").addEventListener("click",get_github);
+
+    function get_github() {
+//        click(1);
+        var ajax = new XMLHttpRequest();
+        ajax.open("get","https://api.github.com/users",true);
+
+        ajax.onload = function () {
+            if(ajax.status == 200 && ajax.readyState){
+                console.log(ajax.responseText);
+            }
+
+        }
+        ajax.send();
+    }
+
+
+
+
+
+
+//    document.getElementById("btn1").addEventListener("click",get_github);
+//    function get_github() {
+//        alert(1);
+//        var ajax = new XMLHttpRequest();
+//        ajax.open("GET","https://api.github.com/users",true);
+//        ajax.onload = function () {
+//            if( ajax.status == 200 && ajax.readyState == 4){
+//                console.log(ajax.responseText);
+//            }
+//
+//        };
+//        ajax.send();
+//    }
+
+
+
+//    btn1 = document.getElementById("btn1");
+//    btn1.addEventListener("click",get_github);
+//
+//    function get_github() {
+//        alert(1);
+//        var ajax = new XMLHttpRequest();
+//        ajax.open("GET","https://api.github.com/users",true);
+//
+//        ajax.onload = function () {
+//            if( ajax.status == 200 && ajax.readyState == 4){
+//                console.log(ajax.responseText);
+//            }
+//
+//        };
+//        ajax.send();
+//    };
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
