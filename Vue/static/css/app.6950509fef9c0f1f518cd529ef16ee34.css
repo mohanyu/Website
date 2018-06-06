@@ -14,7 +14,10 @@
         /*margin: 0 auto*/
     /*}*/
 
-    /*.btn-float, .footer ul, .top, body {*/
+    /*!*.btn-float, .footer ul, .top, body {*!*/
+        /*!*width: 640px*!*/
+    /*!*} *!*/
+    /*body {*/
         /*width: 640px*/
     /*}*/
 /*}*/

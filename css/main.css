@@ -397,22 +397,26 @@ h3{
 /*放大缩小 第一列*/
 
 .img-scale:nth-child(1){
-    background: url("../img/vue.jpg");
+    background: url("../img/website.jpg");
+
     background-size:200px 200px;
     color: #0100ff;
 }
 .img-scale:nth-child(2){
-    background: url("../img/website.jpg");
+    background: url("../img/简历.jpg");
+
     background-size:200px 200px;
     color: #0100ff;
 }
 .img-scale:nth-child(3){
-    background: url("../img/简历.jpg");
+    background: url("../img/跳一跳.jpg");
+
     background-size:200px 200px;
     color: #0100ff;
 }
 .img-scale:nth-child(4){
-    background: url("../img/跳一跳.jpg");
+    background: url("../img/vue.jpg");
+
     background-size:200px 200px;
     color: #0100ff;
 }
