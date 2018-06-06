@@ -268,7 +268,7 @@ h3{
 
 }
 .wrapper{
-    max-width: 1080px;
+    max-width: 100%;
     margin:0 auto;
 }
 
@@ -376,7 +376,8 @@ h3{
 }
 
 .skill article{
-    width: 1000px;
+    /*width: 1000px;*/
+    width: 100%;
     margin:75px auto 0;
 }
 
@@ -587,6 +588,8 @@ footer{
 ul.share-group{
     display: block;
     width:1080px;
+    /*width:100%;*/
+
     margin:0 auto;
     padding: 30px;
     height:100%;
@@ -624,6 +627,7 @@ ul.share-group{
 }
 
 #sidebar{
+    /*overflow: hidden;*/
     /*display: none;*/
     position: fixed;
     /*margin-top: 50px;*/
