@@ -92,22 +92,20 @@ header {
 
 .qrcode {
     float: left;
-    margin: 0; }
+    margin: 0; 
+}
 .resume {
     float: right;
-    margin: 0 0 -30px 0; 
-    /* margin: 0;  */
-    /* bottom： */
-    /* padding-top: 50px; */
+    margin: -120px 0 0 0;
 }
 
 @media (max-width: 1024px) {
     .qrcode {
         display: none; 
     } 
-    /* .resume {
+    .resume {
         display: none; 
-    }  */
+    } 
 }
 @media print {
     .qrcode {
@@ -162,11 +160,13 @@ address {
     display: inline-block; }
 @media print {
     .phone {
-        display: block; } }
+        display: block; } 
+    }
 
 @media print {
     .wechat {
-        display: none; } }
+        display: none; }
+     }
 
 .contacts {
     font-size: 18px;
