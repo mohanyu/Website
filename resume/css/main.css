@@ -7,7 +7,7 @@ body {
 main{
     margin: 0 auto;
     background-color: #2d4e5c;
-    background-image : url(../images/background.png);
+    background-image : url('https://mohanyu.github.io/Website/resume/images/background.png');
     width: 1100px;
     /*height: 800px;*/
     display: -webkit-box;
