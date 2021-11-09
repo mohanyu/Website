@@ -6,7 +6,7 @@ body {
 
 main{
     margin: 0 auto;
-    background: #2d4e5c url(/resume/images/background.png);
+    background: #2d4e5c url(./resume/images/background.png);
     width: 1100px;
     /*height: 800px;*/
     display: -webkit-box;
