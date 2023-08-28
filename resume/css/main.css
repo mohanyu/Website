@@ -98,7 +98,8 @@ header {
 .resume {
     float: right;
     /* 打印：  -120px*/
-    margin: -120px 0 0 0;   
+    /* margin: -120px 0 0 0;    */
+    margin: -173px 0 0 0;   
 }
 
 @media (max-width: 1024px) {
@@ -106,9 +107,9 @@ header {
         display: none; 
     } 
     /* 打印：时需要注释掉 .resume A4纸打印 缩小比例为 87*/
-    .resume {
+    /* .resume {
         display: none; 
-    } 
+    }  */
 }
 @media print {
     .qrcode {
@@ -391,7 +392,10 @@ dd {
 
 @media print {
     .experience .experience-link {
-        font-size: 14px; }
+        /* font-size: 14px;  */
+       display: none;
+    }
+
 }
 
 
@@ -399,12 +403,17 @@ dd {
     .skills .skill-content {
         margin: 0; } }
 
+.skills {
+    padding-top: 10px;
+}
+
 .skills .skill-name {
     font-size: 18px;
     font-weight: 700;
     margin: 6px 0 5px 26px;
     color: #2d4e5c;
 }
+
 
 
 
